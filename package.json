@@ -1,0 +1,25 @@
+{
+  "name": "cusip-generator",
+  "version": "1.0.0",
+  "description": "Generate a valid CUISP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomaschaplin/cusip-generator.git"
+  },
+  "keywords": [
+    "cusip",
+    "generator",
+    "cusip-generator",
+    "thomaschaplin"
+  ],
+  "author": "Thomas Chaplin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomaschaplin/cusip-generator/issues"
+  },
+  "homepage": "https://github.com/thomaschaplin/cusip-generator#readme"
+}
