@@ -5,7 +5,9 @@
 [![GitHub stars](https://img.shields.io/github/stars/thomaschaplin/cusip-generator)](https://github.com/thomaschaplin/cusip-generator/stargazers)
 [![GitHub license](https://img.shields.io/github/license/thomaschaplin/cusip-generator)](https://github.com/thomaschaplin/cusip-generator/blob/master/LICENSE)
 
-Generate a random name from a list of over 277,000 names
+Generate a random CUSIP
+
+CUSIP stands for Committee on Uniform Securities Identification Procedures. A CUSIP number identifies most financial instruments, including: stocks of all registered U.S. and Canadian companies, commercial paper, and U.S. government and municipal bonds.
 
 ## Install
 
