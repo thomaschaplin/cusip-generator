@@ -1,7 +1,7 @@
 {
-  "name": "cusip-generator",
+  "name": "@thomaschaplin/cusip-generator",
   "version": "1.0.0",
-  "description": "Generate a valid CUISP",
+  "description": "Generate a valid CUSIP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
