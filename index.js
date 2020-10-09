@@ -40,15 +40,26 @@ const getRandomBaseTenNumber = () => Math.floor(Math.random() * 10);
 const getRandomAlphanumeric = () =>
   alphanumeric[Math.floor(Math.random() * alphanumeric.length)];
 
-const makeCusipWithoutCheckCode = () => {
-  let cusip = "";
+const generateRandomStringOfBaseTenChars = () => {
+  let string = "";
   for (let i = 0; i < 6; i++) {
-    cusip = cusip + getRandomBaseTenNumber();
+    string = string + getRandomBaseTenNumber();
   }
+  return string;
+};
+
+const generateRandomStringOfAlphanumericChars = () => {
+  let string = "";
   for (let i = 0; i < 2; i++) {
-    cusip = cusip + getRandomAlphanumeric();
+    string = string + getRandomAlphanumeric();
   }
-  return cusip;
+  return string;
+};
+
+const makeCusipWithoutCheckCode = () => {
+  const randomBaseTenString = generateRandomStringOfBaseTenChars();
+  const randomAlphanumericString = generateRandomStringOfAlphanumericChars();
+  return randomBaseTenString + randomAlphanumericString;
 };
 
 const convertNumberToBaseTen = (value) => parseInt(value, 10);
@@ -56,11 +67,12 @@ const convertNumberToBaseTen = (value) => parseInt(value, 10);
 const isOdd = (value) => value % 2 === 1;
 
 const calculateCheckCode = (cusip) => {
+  const cusipLength = cusip.length;
   let currentValue;
   let total = 0;
   let check;
 
-  for (let i = 0; i < cusip.length; i++) {
+  for (let i = 0; i < cusipLength; i++) {
     currentValue = cusip[i];
 
     const currentNumberToBaseTen = convertNumberToBaseTen(currentValue);
