@@ -1,39 +1,65 @@
+<img src="assets/logo.png" alt="logo" width="201" height="245" />
+
 # cusip-generator
-![npm (scoped)](https://img.shields.io/npm/v/@thomaschaplin/cusip-generator)
-[![GitHub issues](https://img.shields.io/github/issues/thomaschaplin/cusip-generator)](https://github.com/thomaschaplin/cusip-generator/issues)
-[![GitHub forks](https://img.shields.io/github/forks/thomaschaplin/cusip-generator)](https://github.com/thomaschaplin/cusip-generator/network)
-[![GitHub stars](https://img.shields.io/github/stars/thomaschaplin/cusip-generator)](https://github.com/thomaschaplin/cusip-generator/stargazers)
-[![GitHub license](https://img.shields.io/github/license/thomaschaplin/cusip-generator)](https://github.com/thomaschaplin/cusip-generator/blob/master/LICENSE)
 
-Generate a random CUSIP
+cusip-generator is a [Node.js](https://nodejs.org/en/) library to generate
+random CUSIP with a single API.
 
-CUSIP stands for Committee on Uniform Securities Identification Procedures. A CUSIP number identifies most financial instruments, including: stocks of all registered U.S. and Canadian companies, commercial paper, and U.S. government and municipal bonds.
-
-## Install
-
-`npm i @thomaschaplin/cusip-generator`
+CUSIP stands for Committee on Uniform Securities Identification Procedures. A
+CUSIP number identifies most financial instruments, including: stocks of all
+registered U.S. and Canadian companies, commercial paper, and U.S. government
+and municipal bonds.
 
 ## Usage
 
-### ES5
+`npm i @thomaschaplin/cusip-generator`
+
+### Example Usage
+
+#### ES5
+
 ```js
-const generateCusip = require('@thomaschaplin/cusip-generator')
-console.log(generateCusip.generateCusip()) // 327492T38
+const generateCusip = require("@thomaschaplin/cusip-generator");
+console.log(generateCusip.generateCusip()); // 327492T38
 ```
 
 or
 
 ```js
-const { generateCusip } = require('@thomaschaplin/cusip-generator')
-console.log(generateCusip()) // 5519069J1
+const { generateCusip } = require("@thomaschaplin/cusip-generator");
+console.log(generateCusip()); // 5519069J1
 ```
 
-### ES6
+#### ES6
 
 ```js
 import { generateCusip } from '@thomaschaplin/cusip-generator')
 console.log(generateCusip()) // 112091HZ9
 ```
 
-## License 
+## Setup
+
+Make sure you have [Node.js](https://nodejs.org/en/) installed on your machine
+
+### Development
+
+#### Installation
+
+- Clone this repository
+  `git clone git@github.com:thomaschaplin/cusip-generator.git`
+- Change directory `cd cusip-generator`
+- Install the dependencies `npm install`
+- Transpile the code `npm run build` or `npm run watch`
+
+#### Tests
+
+- Run the tests `npm test`
+- Run the tests with coverage `npm test:coverage`
+
+## License
+
 [MIT](./LICENSE)
+
+---
+
+[Logo](https://www.clipartkey.com/view/iwiixw_yes-we-offer-both-short-term-interest-free/) graphic by <a href="https://www.clipartkey.com/upic/1115/">Perlenfuerdiehunde</a> from ClipArtKey.
