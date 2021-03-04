@@ -1,6 +1,6 @@
 {
     "name": "@thomaschaplin/cusip-generator",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Generate a valid CUSIP",
     "main": "build/index.js",
     "files": [
@@ -33,11 +33,13 @@
     "author": "Thomas Chaplin <thomaschaplin@outlook.com>",
     "license": "MIT",
     "devDependencies": {
-        "@types/node": "^13.9.2",
-        "husky": "^4.2.3",
+        "@types/jest": "^24.9.1",
+        "@types/node": "^12.20.4",
+        "husky": "^4.3.8",
+        "jest": "^26.6.3",
+        "kelonio": "^0.6.0",
         "rimraf": "^3.0.2",
-        "typescript": "^3.8.3",
-        "@types/jest": "^26.0.0",
-        "jest": "^26.0.1"
+        "ts-jest": "^24.3.0",
+        "typescript": "^3.9.9"
     }
 }

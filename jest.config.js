@@ -1,14 +1,18 @@
-const path = require("path");
-
-const rootDir = path.join(__dirname, "./build");
-const roots = [rootDir];
-const testMatch = ["**/*.spec.js"];
+const testMatch = ["**/*.spec.ts"];
 const ignoredTests = ["node_modules/"];
 
 module.exports = {
   testMatch,
   testPathIgnorePatterns: ignoredTests,
-  rootDir,
-  roots,
   verbose: true,
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+  },
+  reporters: [
+    "default",
+    ["<rootDir>/node_modules/kelonio/out/plugin/jestReporter", { keepStateAtStart: false, keepStateAtEnd: false, printReportAtEnd: true }]
+  ],
+  setupFilesAfterEnv: [
+    "<rootDir>/node_modules/kelonio/out/plugin/jestReporterSetup.js",
+  ],
 };
