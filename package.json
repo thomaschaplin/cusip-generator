@@ -1,7 +1,7 @@
 {
     "name": "@thomaschaplin/cusip-generator",
-    "version": "1.0.3",
-    "description": "Generate a valid CUSIPn",
+    "version": "1.0.4",
+    "description": "Generate a valid CUSIP",
     "main": "build/index.js",
     "files": [
         "build",
