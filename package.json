@@ -1,25 +1,43 @@
 {
-  "name": "@thomaschaplin/cusip-generator",
-  "version": "1.0.2",
-  "description": "Generate a valid CUSIP",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thomaschaplin/cusip-generator.git"
-  },
-  "keywords": [
-    "cusip",
-    "generator",
-    "cusip-generator",
-    "thomaschaplin"
-  ],
-  "author": "Thomas Chaplin",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/thomaschaplin/cusip-generator/issues"
-  },
-  "homepage": "https://github.com/thomaschaplin/cusip-generator#readme"
+    "name": "@thomaschaplin/cusip-generator",
+    "version": "1.0.2",
+    "description": "Generate a valid CUSIPn",
+    "main": "build/index.js",
+    "files": [
+        "build",
+        "LICENSE",
+        "readme.md",
+        "assets/logo.png"
+    ],
+    "scripts": {
+        "test": "jest",
+        "test:coverage": "jest --coverage",
+        "build": "rimraf ./build && tsc",
+        "watch": "rimraf ./build && tsc --watch",
+        "start": "node build/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thomaschaplin/cusip-generator"
+    },
+    "bugs": {
+        "url": "https://github.com/thomaschaplin/cusip-generator/issues"
+    },
+    "homepage": "https://github.com/thomaschaplin/cusip-generator#readme",
+    "keywords": [
+        "cusip",
+        "generator",
+        "cusip-generator",
+        "thomaschaplin"
+    ],
+    "author": "Thomas Chaplin <thomaschaplin@outlook.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^13.9.2",
+        "husky": "^4.2.3",
+        "rimraf": "^3.0.2",
+        "typescript": "^3.8.3",
+        "@types/jest": "^26.0.0",
+        "jest": "^26.0.1"
+    }
 }
