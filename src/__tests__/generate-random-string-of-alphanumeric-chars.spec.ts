@@ -9,10 +9,9 @@ describe("generate-random-string-of-alphanumeric-chars", () => {
 
   it("generate-random-string-of-alphanumeric-chars performance", async () => {
     await benchmark.record(
-"generate-random-string-of-alphanumeric-chars",
+      "generate-random-string-of-alphanumeric-chars",
       () => generateRandomStringOfAlphanumericChars(),
       { meanUnder: 1 },
     );
   });
 });
-

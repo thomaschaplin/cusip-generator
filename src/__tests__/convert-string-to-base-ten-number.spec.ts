@@ -8,7 +8,8 @@ describe("convert-string-to-base-ten-number", () => {
   });
 
   it("convert-string-to-base-ten-number performance", async () => {
-    await benchmark.record("convert-string-to-base-ten-number",
+    await benchmark.record(
+      "convert-string-to-base-ten-number",
       () => convertStingToBaseTenNumber("1"),
       { meanUnder: 1 },
     );

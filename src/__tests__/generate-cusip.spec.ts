@@ -9,10 +9,9 @@ describe("generate-cusip", () => {
 
   it("generate-cusip performance", async () => {
     await benchmark.record(
-"generate-cusip",
+      "generate-cusip",
       () => generateCusip(),
       { meanUnder: 1 },
     );
   });
 });
-

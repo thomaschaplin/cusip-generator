@@ -9,10 +9,9 @@ describe("generate-cusip-check-code", () => {
 
   it("generate-cusip-check-code performance", async () => {
     await benchmark.record(
-"generate-cusip-check-code",
+      "generate-cusip-check-code",
       () => generateCusipCheckCode("327492T3"),
       { meanUnder: 1 },
     );
   });
 });
-

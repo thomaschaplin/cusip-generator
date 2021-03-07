@@ -9,10 +9,9 @@ describe("generate-random-string-of-base-ten-chars", () => {
 
   it("generate-random-string-of-base-ten-chars performance", async () => {
     await benchmark.record(
-"generate-random-string-of-base-ten-chars.spec",
+      "generate-random-string-of-base-ten-chars.spec",
       () => generateRandomStringOfBaseTenChars(),
       { meanUnder: 1 },
     );
   });
 });
-
