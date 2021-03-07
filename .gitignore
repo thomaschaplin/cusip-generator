@@ -2,3 +2,5 @@ node_modules
 build
 coverage
 .kelonio.state.json
+*.stryker-tmp
+reports
