@@ -1,9 +1,9 @@
-import { calculateCheckCode } from "./generate-cusip-check-code";
-import { makeCusipWithoutCheckCode } from "./generate-cusip-without-check-code";
+import { generateCusipCheckCode } from "./generate-cusip-check-code";
+import { generateCusipWithoutCheckCode } from "./generate-cusip-without-check-code";
 
 export const generateCusip = (): string => {
-  const cusip = makeCusipWithoutCheckCode();
-  const check = calculateCheckCode(cusip);
+  const cusip = generateCusipWithoutCheckCode();
+  const check = generateCusipCheckCode(cusip);
 
   return cusip + check;
 };
