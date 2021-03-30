@@ -14,7 +14,8 @@
         "test:coverage": "rm -rf coverage && npm test -- --coverage",
         "test:mutation": "stryker run",
         "build": "rm -rf ./build && tsc",
-        "watch": "npm run build -- --watch"
+        "watch": "npm run build -- --watch",
+        "pre-push": "./prepush.sh"
     },
     "repository": {
         "type": "git",
@@ -38,7 +39,7 @@
         "ts-jest": "^26.5.3",
         "@types/jest": "^26.0.20",
         "@types/node": "^14.14.31",
-        "husky": "^5.1.3",
+        "husky": "^6.0.0",
         "typescript": "^4.2.3",
         "@stryker-mutator/core": "^4.4.1",
         "@stryker-mutator/jest-runner": "^4.4.1",
