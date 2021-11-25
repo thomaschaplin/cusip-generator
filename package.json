@@ -44,6 +44,6 @@
         "@stryker-mutator/core": "^4.4.1",
         "@stryker-mutator/jest-runner": "^4.4.1",
         "@stryker-mutator/typescript-checker": "^4.4.1",
-        "husky": "^6.0.0"
+        "husky": "^7.0.4"
     }
 }
