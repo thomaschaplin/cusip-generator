@@ -35,7 +35,7 @@ publish() {
 main() {
     checkIsCorrectNpmUser
     installDependencies
-    lint
+    # lint
     build
     publish
 }
