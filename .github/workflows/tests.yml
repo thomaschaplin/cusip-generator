@@ -25,5 +25,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Test
+      - name: Test (coverage)
         run: npm run test:coverage
+
+      - name: Test (mutation)
+        run: npm run test:mutation
