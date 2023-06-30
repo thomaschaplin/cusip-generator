@@ -14,16 +14,9 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
 
       - name: Login
         run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.npm_token }}
-
-      - name: Whoami
-        run: npm whoami
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
 
       - name: Install
         run: npm ci
@@ -47,5 +40,6 @@ jobs:
 
       - name: Publish
         run: npm publish
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+
+      - name: Push Tags
+        run: git push --follow-tags
