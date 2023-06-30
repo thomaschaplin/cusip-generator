@@ -2,10 +2,10 @@ name: NPM Publish
 
 on:
   push:
-    branches: [publish]
+    branches: [master]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: npm-publish
 
 jobs:
   publish:
@@ -17,9 +17,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
-
-      - name: Login
-        run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.npm_token }}
 
       - name: Install
         run: npm ci
@@ -38,8 +35,8 @@ jobs:
           git config --global user.email "thomaschaplin@outlook.com"
           git config --global user.name "Thomas Chaplin"
 
-      - name: Configure Legacy Auth Type
-        run: npm config set auth-type=legacy
+      - name: Login to NPM
+        run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.npm_token }}
 
       - name: Publish
         run: npm publish
