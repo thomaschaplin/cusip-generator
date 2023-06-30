@@ -16,7 +16,9 @@
         "build": "rm -rf ./build && tsc",
         "watch": "npm run build -- --watch",
         "pre-push": "./prepush.sh",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "prepublishOnly": "npm run clean && npm version patch && npm ci && npm run build",
+        "clean": "rm -rf ./build && rm -rf ./coverage && rm -rf ./node_modules && rm -rf ./reports"
     },
     "repository": {
         "type": "git",
