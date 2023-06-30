@@ -1,0 +1,45 @@
+name: NPM Publish
+
+on:
+  push:
+    branches: [master]
+
+concurrency:
+  group: npm-publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Test (coverage)
+        run: npm run test:coverage
+
+      - name: Test (mutation)
+        run: npm run test:mutation
+
+      - name: Configure GIT User
+        run: |
+          git config --global user.email "thomaschaplin@outlook.com"
+          git config --global user.name "Thomas Chaplin"
+
+      - name: Login to NPM
+        run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.npm_token }}
+
+      - name: Publish
+        run: npm publish
+
+      - name: Push Tags
+        run: git push --follow-tags
