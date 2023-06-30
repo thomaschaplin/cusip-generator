@@ -32,6 +32,9 @@ jobs:
           git config --global user.email "thomaschaplin@outlook.com"
           git config --global user.name "Thomas Chaplin"
 
+      - name: Configure Legacy Auth Type
+        run: npm config set auth-type=legacy
+
       - name: Publish
         run: npm publish
         env:
