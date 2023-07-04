@@ -44,5 +44,10 @@ jobs:
       - name: Login to NPM
         run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.npm_token }}
 
+      - name: Configure GIT User
+        run: |
+          git config --global user.email "thomaschaplin@outlook.com"
+          git config --global user.name "Thomas Chaplin"
+
       - name: Publish
         run: npm publish
