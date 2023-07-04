@@ -48,5 +48,8 @@ jobs:
           git config --global user.email "thomaschaplin@outlook.com"
           git config --global user.name "Thomas Chaplin"
 
+      - name: Version
+        run: npm version patch
+
       - name: Publish
         run: npm publish
