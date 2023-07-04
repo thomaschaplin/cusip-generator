@@ -47,5 +47,5 @@
         "@stryker-mutator/typescript-checker": "^7.1.0",
         "husky": "^8.0.3"
     },
-    "version": "0.0.1"
+    "version": "1.0.21"
 }
