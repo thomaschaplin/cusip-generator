@@ -30,11 +30,6 @@ jobs:
       - name: Test (mutation)
         run: npm run test:mutation
 
-      - name: Configure GIT User
-        run: |
-          git config --global user.email "thomaschaplin@outlook.com"
-          git config --global user.name "Thomas Chaplin"
-
   publish:
     runs-on: ubuntu-latest
     needs: test
