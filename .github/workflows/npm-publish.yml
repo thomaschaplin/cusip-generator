@@ -1,7 +1,9 @@
 name: NPM Publish
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - master
 
 concurrency:
   group: npm-publish
