@@ -55,12 +55,12 @@ jobs:
 
       - name: Get latest version
         id: latest_version
-        run: echo "PACKAGE_NAME=$(npm show ${{ env.PACKAGE_NAME }} version)" >> $GITHUB_OUTPUT
+        run: echo "LATEST_VERSION=$(npm show ${{ env.PACKAGE_NAME }} version)" >> $GITHUB_OUTPUT
 
       - name: Check if already published
         run: |
-          if [ "${{ env.PACKAGE_NAME }}" == "$(git tag --sort=committerdate | grep -E '[0-9]' | tail -1 | cut -b 2-7 )" ]; then
-            echo "Version ${{ env.PACKAGE_NAME }} is already the latest published version"
+          if [ "${{ env.LATEST_VERSION }}" == "$(git tag --sort=committerdate | grep -E '[0-9]' | tail -1 | cut -b 2-7 )" ]; then
+            echo "Version ${{ env.LATEST_VERSION }} is already the latest published version"
             exit 0
           fi
 
