@@ -42,4 +42,4 @@ jobs:
         run: npm publish
 
       - name: Push Tags
-        run: git push --follow-tags
+        run: git push --follow-tags --force
