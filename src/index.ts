@@ -1,1 +1,1 @@
-export { generateCusip } from "./generate-cusip";
+export { generateCusip } from './generate-cusip';

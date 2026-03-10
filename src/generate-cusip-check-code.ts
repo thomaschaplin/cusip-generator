@@ -1,28 +1,10 @@
-import { convertStringToBaseTenNumber } from "./convert-string-to-base-ten-number";
-import { isOdd } from "./is-odd";
-
 export const generateCusipCheckCode = (cusip: string): number => {
-  const cusipLength = cusip.length;
-  let currentValue;
   let total = 0;
-  let check: number;
-
-  for (let i = 0; i < cusipLength; i++) {
-    currentValue = cusip[i];
-
-    const currentNumberToBaseTen = convertStringToBaseTenNumber(currentValue);
-
-    let currentNumberOrPosition = isNaN(currentNumberToBaseTen)
-      ? currentValue.charCodeAt(0) - "A".charCodeAt(0) + 10
-      : currentValue;
-
-    if (isOdd(i)) {
-      currentNumberOrPosition = currentNumberOrPosition * 2;
-    }
-
-    total = total + Math.floor(currentNumberOrPosition / 10) +
-      (currentNumberOrPosition % 10);
+  for (let i = 0; i < cusip.length; i++) {
+    const c = cusip[i];
+    let v: number = isNaN(parseInt(c, 10)) ? c.charCodeAt(0) - 'A'.charCodeAt(0) + 10 : +c;
+    if (i % 2 === 1) v *= 2;
+    total += Math.floor(v / 10) + (v % 10);
   }
-  check = (10 - (total % 10)) % 10;
-  return check;
+  return (10 - (total % 10)) % 10;
 };
