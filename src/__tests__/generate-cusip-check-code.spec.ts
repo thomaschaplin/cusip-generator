@@ -7,6 +7,13 @@ describe("generate-cusip-check-code", () => {
     expect(result).toEqual(8);
   });
 
+  it("should correctly sum digit-split values (catches arithmetic operator mutations)", () => {
+    // "037831AG" has sum(v_i % 10) = 26, which is not divisible by 5 or 10.
+    // This distinguishes + from -, and % 10 from * 10, in the accumulator expression.
+    const result = generateCusipCheckCode("037831AG");
+    expect(result).toEqual(9);
+  });
+
   it("generate-cusip-check-code performance", async () => {
     await benchmark.record(
       "generate-cusip-check-code",
