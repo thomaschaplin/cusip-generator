@@ -1,5 +1,7 @@
 <img src="assets/logo.png" alt="logo" width="201" height="245" />
 
+[![npm version](https://badge.fury.io/js/%40thomaschaplin%2Fcusip-generator.svg)](https://badge.fury.io/js/%40thomaschaplin%2Fcusip-generator)
+
 # cusip-generator
 
 cusip-generator is a [Node.js](https://nodejs.org/en/) library to generate
@@ -10,9 +12,16 @@ CUSIP number identifies most financial instruments, including: stocks of all
 registered U.S. and Canadian companies, commercial paper, and U.S. government
 and municipal bonds.
 
+**CUSIP format (9 characters):**
+- Characters 1–6: Issuer code (base-ten digits)
+- Characters 7–8: Issue number (alphanumeric)
+- Character 9: Check digit (computed via checksum algorithm)
+
 ## Usage
 
-`npm i @thomaschaplin/cusip-generator`
+```bash
+npm i @thomaschaplin/cusip-generator
+```
 
 ### Example Usage
 
@@ -33,8 +42,16 @@ console.log(generateCusip()); // 5519069J1
 #### ES6
 
 ```js
-import { generateCusip } from '@thomaschaplin/cusip-generator')
+import { generateCusip } from '@thomaschaplin/cusip-generator'
 console.log(generateCusip()) // 112091HZ9
+```
+
+#### TypeScript
+
+```ts
+import { generateCusip } from '@thomaschaplin/cusip-generator'
+const cusip: string = generateCusip()
+console.log(cusip) // e.g., 112091HZ9
 ```
 
 ## Setup
@@ -46,15 +63,40 @@ Make sure you have [Node.js](https://nodejs.org/en/) installed on your machine
 #### Installation
 
 - Clone this repository
-  `git clone git@github.com:thomaschaplin/cusip-generator.git`
-- Change directory `cd cusip-generator`
-- Install the dependencies `npm install`
-- Transpile the code `npm run build` or `npm run watch`
+  ```bash
+  git clone git@github.com:thomaschaplin/cusip-generator.git
+  ```
+- Change directory
+  ```bash
+  cd cusip-generator
+  ```
+- Install the dependencies
+  ```bash
+  npm install
+  ```
+- Transpile the code
+  ```bash
+  npm run build
+  ```
+  or
+  ```bash
+  npm run watch
+  ```
 
 #### Tests
 
-- Run the tests `npm test`
-- Run the tests with coverage `npm run test:coverage`
+- Run the tests
+  ```bash
+  npm test
+  ```
+- Run the tests with coverage
+  ```bash
+  npm run test:coverage
+  ```
+- Run mutation tests
+  ```bash
+  npm run test:mutation
+  ```
 
 ## License
 
